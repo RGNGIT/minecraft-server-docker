@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+    minecraft-server: 
+        build:
+            context: .
+            args:
+                RAM_AMOUNT: ${RAM_AMOUNT}
+                BINARY_NAME: ${BINARY_NAME}
+        volumes:
+            - .server-data:/server
+        ports:
+            - ${PORT_RANGE_GAME}
+            - ${PORT_RANGE_QUERY}
+        container_name: ${CONTAINER_NAME}
+
+volumes:
+    server-data:
