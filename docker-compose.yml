@@ -5,14 +5,14 @@ services:
         build:
             context: .
             args:
-                RAM_AMOUNT: ${RAM_AMOUNT}
-                BINARY_NAME: ${BINARY_NAME}
+                RAM_AMOUNT: # Amount of allocated RAM
+                BINARY_NAME: # Name of the server's jar file w/o .jar
         volumes:
             - .server-data:/server
         ports:
-            - ${PORT_RANGE_GAME}
-            - ${PORT_RANGE_QUERY}
-        container_name: ${CONTAINER_NAME}
+            - # Game port
+            - # Query port
+        container_name: # Name of the container
 
 volumes:
     server-data:
